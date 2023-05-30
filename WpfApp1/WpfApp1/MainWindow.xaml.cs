@@ -24,6 +24,10 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            Sędzia s1 = new Sędzia("Janek", "Kowalski"), s2 = new Sędzia("Zbugniew", "chuj"), s3 = new Sędzia("pies", "siurek");
+            rejestrSędziów.DodajSędziego(s1);
+            rejestrSędziów.DodajSędziego(s2);
+            rejestrSędziów.DodajSędziego(s3);
         }
         private void ZobaczSędziów(object sender, RoutedEventArgs e)
         {

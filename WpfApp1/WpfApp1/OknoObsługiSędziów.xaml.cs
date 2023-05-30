@@ -25,10 +25,7 @@ namespace WpfApp1
         {
             InitializeComponent();
             this.rejestrSędziów = rejestrSędziów;
-            Sędzia s1=new Sędzia("Janek", "Kowalski"), s2=new Sędzia("Zbugniew","chuj"), s3 = new Sędzia("pies","siurek");
-            rejestrSędziów.DodajSędziego(s1);
-            rejestrSędziów.DodajSędziego(s2);
-            rejestrSędziów.DodajSędziego(s3);
+            
             ListaSędziów.ItemsSource = rejestrSędziów.GetListaSędziów();
             
         }
