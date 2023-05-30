@@ -20,9 +20,15 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        RejestrSędziów rejestrSędziów = new RejestrSędziów();
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void ZobaczSędziów(object sender, RoutedEventArgs e)
+        {
+            OknoObsługiSędziów noweOkno = new OknoObsługiSędziów(rejestrSędziów);
+            noweOkno.ShowDialog();
         }
     }
 }

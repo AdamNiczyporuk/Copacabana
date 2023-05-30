@@ -12,7 +12,7 @@ namespace WpfApp1
         public string Imie { get; private set; }
         public string Nazwisko { get; private set; }
         public int Id { get; private set; }
-        Sędzia(string imie, string nazwisko)
+        public Sędzia(string imie, string nazwisko)
         {
             Imie = imie;
             Nazwisko = nazwisko;
@@ -21,6 +21,10 @@ namespace WpfApp1
         private int GenerujId()
         {
             return generatorID++;
+        }
+        public override string ToString()
+        {
+            return Imie + " " + Nazwisko;
         }
 
     }
@@ -51,6 +55,7 @@ namespace WpfApp1
         {
             sędziowie.Remove(sędziowie.Find(s => s.Id == id));
         }
+       
     }
 
 }
