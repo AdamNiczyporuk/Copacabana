@@ -44,5 +44,16 @@ namespace WpfApp1
             }
             else return;
         }
+
+        private void DodajSędziego(object sender, RoutedEventArgs e)
+        {
+            if(ImieNowegoSędziego.Text!=""&& NazwiskoNowegoSędziego.Text!="")
+            {
+                Sędzia nowySędzia = new Sędzia(ImieNowegoSędziego.Text,NazwiskoNowegoSędziego.Text);
+                rejestrSędziów.DodajSędziego(nowySędzia);
+                ListaSędziów .Items.Refresh();
+                ImieNowegoSędziego.Text = NazwiskoNowegoSędziego.Text = "";
+            }
+        }
     }
 }
