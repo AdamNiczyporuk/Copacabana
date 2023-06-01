@@ -127,7 +127,7 @@ namespace WpfApp1
         public void UstawWynikiMeczu(int id)
         {
             Mecz szukany = GetMecz(id);
-            szukany.Wynik // nie wiem jak to settować
+            //szukany.Wynik // nie wiem jak to settować
     }
 
 

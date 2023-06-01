@@ -29,6 +29,7 @@ zapis i odczyt stanu systemu na dysk*/
     public partial class MainWindow : Window
     {
         RejestrSędziów rejestrSędziów = new RejestrSędziów();
+        RejestrDrużyn rejestrDrużynSiatkówki = new RejestrDrużyn();
         public MainWindow()
         {
             InitializeComponent();
@@ -36,6 +37,9 @@ zapis i odczyt stanu systemu na dysk*/
             rejestrSędziów.DodajSędziego(s1);
             rejestrSędziów.DodajSędziego(s2);
             rejestrSędziów.DodajSędziego(s3);
+            rejestrDrużynSiatkówki.DodajDrużyne(new DrużynaSiatkówka("Goliaty Bez Klaty"));
+            rejestrDrużynSiatkówki.DodajDrużyne(new DrużynaSiatkówka("FC Siusiorki"));
+            rejestrDrużynSiatkówki.DodajDrużyne(new DrużynaSiatkówka("Kiełbasa PKS"));
         }
         private void ZobaczSędziów(object sender, RoutedEventArgs e)
         {

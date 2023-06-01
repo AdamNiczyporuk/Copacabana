@@ -19,9 +19,12 @@ namespace WpfApp1
     /// </summary>
     public partial class OknoObsługiDrużynSiatkówki : Window
     {
-        public OknoObsługiDrużynSiatkówki()
+        RejestrDrużyn rejestrDrużynSiatkówki;
+        public OknoObsługiDrużynSiatkówki(RejestrDrużyn rejestr)
         {
             InitializeComponent();
+            rejestrDrużynSiatkówki = rejestr;
+            ListaDrużyn.ItemsSource = rejestrDrużynSiatkówki.GetListaDrużyn();
         }
     }
 }

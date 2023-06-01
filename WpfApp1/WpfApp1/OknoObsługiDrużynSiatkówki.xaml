@@ -8,7 +8,8 @@
         Title="OknoObsługiDrużynSiatkówki" Height="450" Width="800">
     <Grid>
         <ListBox  Margin="39,48,300,134"
-                 x:Name="ListaDrużyn"/>
+                 x:Name="ListaDrużyn"
+                  />
         <Button Content="Dodaj Drużyne" HorizontalAlignment="Left" Margin="58,333,0,0" VerticalAlignment="Top"/>
         <Button Content="Usuń Drużyne" HorizontalAlignment="Left" Margin="296,333,0,0" VerticalAlignment="Top"/>
         <Button Content="Przejdź do rozgrywek" HorizontalAlignment="Left" Margin="621,66,0,0" VerticalAlignment="Top"/>
