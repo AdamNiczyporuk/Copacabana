@@ -8,5 +8,6 @@ namespace WpfApp1
 {
     internal class Turniej
     {
+        //sadasndasjndjkasndjkas
     }
 }
