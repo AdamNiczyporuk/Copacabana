@@ -8,7 +8,8 @@ namespace WpfApp1
 {
     internal class Turniej
     {
-        protected półfinał 
+        //chujj
+
         
         
     }
