@@ -10,5 +10,6 @@ namespace WpfApp1
     {
         //sadasndasjndjkasndjkas
         // działa?
+        int x = 2;
     }
 }
