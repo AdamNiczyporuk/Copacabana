@@ -11,8 +11,10 @@
                 Click="ZobaczSędziów"   />
         <Button Width="250" Content="Organizuj rozgrywki w siatkówkę" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top"
                 Click="Siatkówka"/>
-        <Button Width="250" Content="Organizuj rozgrywki w 2 ognie" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top"/>
-        <Button Width="250" Content="Organizuj rozgrywki w przeciąganie liny" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top"/>
+        <Button Width="250" Content="Organizuj rozgrywki w 2 ognie" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top"
+                Click="DwaOgnie"/>
+        <Button Width="250" Content="Organizuj rozgrywki w przeciąganie liny" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top"
+                Click="PrzeciaganieLiny"/>
         <Button Width="250" Content="Zakończ Działanie" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top"
                 Click="Zamykanie"/>
 

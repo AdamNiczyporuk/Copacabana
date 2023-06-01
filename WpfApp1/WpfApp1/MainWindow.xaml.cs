@@ -53,5 +53,17 @@ zapis i odczyt stanu systemu na dysk*/
             OknoObsługiDrużynSiatkówki noweOkno = new OknoObsługiDrużynSiatkówki();
             noweOkno.ShowDialog();
         }
+
+        private void DwaOgnie(object sender, RoutedEventArgs e)
+        {
+            OknoObsługiDrużynDwaOgnie noweOkno = new OknoObsługiDrużynDwaOgnie();
+            noweOkno.ShowDialog();
+        }
+
+        private void PrzeciaganieLiny(object sender, RoutedEventArgs e)
+        {
+            OknoObsługiDrużynPrzeciąganieLiny noweOkno = new OknoObsługiDrużynPrzeciąganieLiny();
+            noweOkno.ShowDialog();
+        }
     }
 }
