@@ -11,18 +11,18 @@ using System.Windows.Media.Animation;
 
 namespace WpfApp1
 {
-    internal class Turniej
+    public class Turniej
     {
-        private string Nazwa;
-        protected Mecz półfinał1 { get; private set; }
-        protected Mecz półfinał2 { get; private set; }
-        protected Mecz finał { get; private set; }
-        protected List<Mecz> mecze { get; private set; }
+        public string Nazwa{get; private set;}
+        public Mecz półfinał1 { get; private set; }
+        public Mecz półfinał2 { get; private set; }
+        public Mecz finał { get; private set; }
+        public List<Mecz> mecze { get; private set; }
         // Nie potrzebne
         //protected static int Id = 0;
 
 
-        protected List<Drużyna> drużyny { get; private set; }
+        public List<Drużyna> drużyny { get; private set; }
         //Wyjebać Generuj ID z Turnieju na UML
         public Turniej(string nazwa)
         {

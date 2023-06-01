@@ -31,7 +31,7 @@ namespace WpfApp1
         {
             if (nazwaZespołu.Text == "") return;
             string nazwa = nazwaZespołu.Text;
-            Drużyna nowaDrużyna = new Drużyna(nazwa);
+            DrużynaSiatkówka nowaDrużyna = new DrużynaSiatkówka(nazwa);
             rejestrDrużynSiatkówki.DodajDrużyne(nowaDrużyna);
             ListaDrużyn.Items.Refresh();
             nazwaZespołu.Text = "";
@@ -40,8 +40,8 @@ namespace WpfApp1
         private void UsuńDrużyne(object sender, RoutedEventArgs e)
         {
             if (ListaDrużyn.SelectedItem == null) return;
-            
-            Drużyna usuwanaDrużyna = ListaDrużyn.SelectedItem as Drużyna;
+
+            DrużynaSiatkówka usuwanaDrużyna = ListaDrużyn.SelectedItem as DrużynaSiatkówka;
             rejestrDrużynSiatkówki.UsuńDrużyne(usuwanaDrużyna.Id);
             ListaDrużyn.Items.Refresh();
         }
