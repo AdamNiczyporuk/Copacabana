@@ -9,6 +9,6 @@ namespace WpfApp1
     internal class Turniej
     {
         //sadasndasjndjkasndjkas
-        // działa?
+        int x = 3;
     }
 }
