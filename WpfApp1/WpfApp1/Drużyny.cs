@@ -75,6 +75,10 @@ namespace WpfApp1
         {
             return drużyny;
         }
+        public int IlośćDrużyn()
+        {
+            return drużyny.Count;
+        }
     }
 }
 

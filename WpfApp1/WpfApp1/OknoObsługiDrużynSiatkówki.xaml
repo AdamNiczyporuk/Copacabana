@@ -5,14 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="OknoObsługiDrużynSiatkówki" Height="450" Width="800">
+        Title="OknoObsługiDrużynSiatkówki" Height="250" Width="500"
+        Background="LightBlue">
     <Grid>
-        <ListBox  Margin="39,48,300,134"
-                 x:Name="ListaDrużyn"
+        <ListBox  Margin="12,16,15,90"
+                 x:Name="ListaDrużyn" d:ItemsSource="{d:SampleData ItemCount=5}"
                   />
-        <Button Content="Dodaj Drużyne" HorizontalAlignment="Left" Margin="58,333,0,0" VerticalAlignment="Top"/>
-        <Button Content="Usuń Drużyne" HorizontalAlignment="Left" Margin="296,333,0,0" VerticalAlignment="Top"/>
-        <Button Content="Przejdź do rozgrywek" HorizontalAlignment="Left" Margin="621,66,0,0" VerticalAlignment="Top"/>
+        <Button Content="Zapisz nową drużyne" HorizontalAlignment="Left" Margin="12,149,0,0" VerticalAlignment="Top"
+                Click="NowaDrużyna"
+                Width="150"/>
+        <Button Content="Usuń Drużyne" HorizontalAlignment="Left" Margin="12,179,0,0" VerticalAlignment="Top"
+                Click="UsuńDrużyne"
+                Width="100"/>
+        <Button Content="Przejdź do rozgrywek" HorizontalAlignment="Left" Margin="117,179,0,0" VerticalAlignment="Top"
+                Click="RozpocznijTurniej"/>
+        <TextBox x:Name="nazwaZespołu" HorizontalAlignment="Left" Margin="285,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"
+                 Height="20"
+                 Width="200" />
+        <TextBox HorizontalAlignment="Left" Margin="167,149,0,0" TextWrapping="Wrap" Text="NazwaDrużyny:" VerticalAlignment="Top" Width="120"
+                 IsReadOnly="True"
+                 Height="20"/>
+        <TextBlock x:Name="wiadomość" HorizontalAlignment="Left" Margin="264,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="31" Width="186"/>
 
     </Grid>
 </Window>

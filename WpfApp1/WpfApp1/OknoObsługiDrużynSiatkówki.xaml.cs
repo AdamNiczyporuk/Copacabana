@@ -26,5 +26,33 @@ namespace WpfApp1
             rejestrDrużynSiatkówki = rejestr;
             ListaDrużyn.ItemsSource = rejestrDrużynSiatkówki.GetListaDrużyn();
         }
+
+        private void NowaDrużyna(object sender, RoutedEventArgs e)
+        {
+            if (nazwaZespołu.Text == "") return;
+            string nazwa = nazwaZespołu.Text;
+            Drużyna nowaDrużyna = new Drużyna(nazwa);
+            rejestrDrużynSiatkówki.DodajDrużyne(nowaDrużyna);
+            ListaDrużyn.Items.Refresh();
+            nazwaZespołu.Text = "";
+        }
+
+        private void UsuńDrużyne(object sender, RoutedEventArgs e)
+        {
+            if (ListaDrużyn.SelectedItem == null) return;
+            
+            Drużyna usuwanaDrużyna = ListaDrużyn.SelectedItem as Drużyna;
+            rejestrDrużynSiatkówki.UsuńDrużyne(usuwanaDrużyna.Id);
+            ListaDrużyn.Items.Refresh();
+        }
+
+        private void RozpocznijTurniej(object sender, RoutedEventArgs e)
+        {
+            if (rejestrDrużynSiatkówki.IlośćDrużyn() < 4)
+            {
+                wiadomość.Text = "Dodaj przynajmniej 4 drużyny aby przejśc do organizacji rozgrywek.";
+            }
+            else wiadomość.Text = "";
+        }
     }
 }

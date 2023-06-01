@@ -54,7 +54,7 @@ zapis i odczyt stanu systemu na dysk*/
 
         private void Siatkówka(object sender, RoutedEventArgs e)
         {
-            OknoObsługiDrużynSiatkówki noweOkno = new OknoObsługiDrużynSiatkówki();
+            OknoObsługiDrużynSiatkówki noweOkno = new OknoObsługiDrużynSiatkówki(rejestrDrużynSiatkówki);
             noweOkno.ShowDialog();
         }
 
