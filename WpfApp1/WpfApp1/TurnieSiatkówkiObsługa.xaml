@@ -8,16 +8,16 @@
         Title="TurnieSiatkówkiObsługa" Height="450" Width="800"
         Background="LightBlue">
     <Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,432,304"
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,265,432,49"
                  x:Name="ListaMeczy"/>
         <Button Content="Dodaj Spotkanie" HorizontalAlignment="Left" Margin="391,12,0,0" VerticalAlignment="Top"
                 Click="DodajMecz"
                 Width="179"/>
-        <Button Content="Wprowadź Wynik Meczu" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top"
+        <Button Content="Wprowadź Wynik Meczu" HorizontalAlignment="Left" Margin="15,177,0,0" VerticalAlignment="Top"
                 Width="179"
                 Click="UstawWynikMeczu"/>
         <ListBox x:Name="ListaWyników"
-            d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,200,422,104"/>
+            d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,33,422,271"/>
         <Button Content="Generuj Mecze Każdy z Każdym" HorizontalAlignment="Left" Margin="391,42,0,0" VerticalAlignment="Top" Width="179"
                 Click="GenerujMecze"/>
         <ListBox x:Name="ListaPółfinały"
@@ -36,6 +36,8 @@
                  TextAlignment="Center"
                  x:Name="zwycięzca"
                  IsReadOnly="true"/>
+        <TextBox HorizontalAlignment="Left" Margin="134,12,0,0" TextWrapping="Wrap" Text="Tabela Wyników" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="134,242,0,0" TextWrapping="Wrap" Text="Lista Meczy" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" IsReadOnly="True"/>
 
     </Grid>
 </Window>

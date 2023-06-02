@@ -123,5 +123,10 @@ namespace WpfApp1
                 zwycięzca.Text = "Remis...";
             }
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
