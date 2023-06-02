@@ -33,13 +33,17 @@ zapis i odczyt stanu systemu na dysk*/
         public MainWindow()
         {
             InitializeComponent();
-            Sędzia s1 = new Sędzia("Janek", "Kowalski"), s2 = new Sędzia("Zbugniew", "chuj"), s3 = new Sędzia("pies", "siurek");
+            Sędzia s1 = new Sędzia("Janek", "Kowalski"), s2 = new Sędzia("Zbugniew", "chuj"), s3 = new Sędzia("pies", "siurek"), s4=new Sędzia("Alek","Bezszpaerk");
             rozgrywki.Sędziowie.DodajSędziego(s1);
             rozgrywki.Sędziowie.DodajSędziego(s2);
             rozgrywki.Sędziowie.DodajSędziego(s3);
+            rozgrywki.Sędziowie.DodajSędziego(s4);
             rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Goliaty Bez Klaty"));
             rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("FC Siusiorki"));
             rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Kiełbasa PKS"));
+            rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Marki bez Arki"));
+
+
         }
         private void ZobaczSędziów(object sender, RoutedEventArgs e)
         {

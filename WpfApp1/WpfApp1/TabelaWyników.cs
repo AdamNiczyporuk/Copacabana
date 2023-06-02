@@ -69,6 +69,8 @@ namespace WpfApp1
                     break;
 
             }
+            Wyniki.Sort((wynikDrużyny1,wynikDrużyny2)=>wynikDrużyny1.Punkty.CompareTo(wynikDrużyny2.Punkty));
+            Wyniki.Reverse();
         }
     }
 }
