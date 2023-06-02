@@ -17,7 +17,7 @@ namespace WpfApp1
         // Wynik '0' oznacza że mecz nie został jeszcze rozegrany
         // Wynik '1' oznacza że wygrała Drużyna1
         // Wynik '2' oznacza że wygrała Drużyna2
-        
+        // Wynik '3' remis
         public char Wynik { get;  set; }
         public int Id { get; private set; }
         
@@ -32,7 +32,20 @@ namespace WpfApp1
         {
             return Wynik != '0';
         }
-        
+        public void UstawWynik(int punktyDrużyny1, int punktyDrużyny2)
+        {
+            if (punktyDrużyny1 > punktyDrużyny2)
+            {
+                Wynik = '1';
+            }
+            else if (punktyDrużyny1 == punktyDrużyny2)
+            {
+                Wynik = '3';
+
+            }
+            else Wynik = '2';
+        }
+
 
 
     }
@@ -47,6 +60,7 @@ namespace WpfApp1
             SędziaPomocniczy1 = sędziaPomocniczy1;
             SędziaPomocniczy2 = sędziaPomocniczy2;
         }
+        
     }
 }
 

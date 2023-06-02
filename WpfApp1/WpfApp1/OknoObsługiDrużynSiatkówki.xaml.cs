@@ -51,8 +51,11 @@ namespace WpfApp1
             if (rejestrDrużynSiatkówki.IlośćDrużyn() < 4)
             {
                 wiadomość.Text = "Dodaj przynajmniej 4 drużyny aby przejśc do organizacji rozgrywek.";
+                return;
             }
-            else wiadomość.Text = "";
+           
+            wiadomość.Text = "";
+            
         }
     }
 }

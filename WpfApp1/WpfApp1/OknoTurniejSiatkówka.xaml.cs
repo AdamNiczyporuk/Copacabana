@@ -19,9 +19,13 @@ namespace WpfApp1
     /// </summary>
     public partial class TurniejSiatkówka : Window
     {
+        List<MeczSiatkówki> mecze;
+        TabelaWyników tabelaWyników;
         public TurniejSiatkówka()
         {
             InitializeComponent();
+            ListaMeczy.ItemsSource = mecze;
+            ListaWyników.ItemsSource = tabelaWyników.Wyniki;
         }
     }
 }

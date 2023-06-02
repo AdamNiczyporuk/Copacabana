@@ -45,7 +45,7 @@ namespace WpfApp1
         {
             if (CzyWszytskieRozegrane() == 1)
             {
-                TabelaWyników tabela = new TabelaWyników();
+                TabelaWyników tabela = new TabelaWyników(drużyny);
                 List<WynikDrużyny> wyniki = tabela.Wyniki;
                 wyniki.Sort();
                 wyniki.Reverse();
@@ -80,7 +80,7 @@ namespace WpfApp1
         {
             if (CzyWszytskieRozegrane() == 1)
             {
-                TabelaWyników tabela = new TabelaWyników();
+                TabelaWyników tabela = new TabelaWyników(drużyny);
                 List<WynikDrużyny> wyniki = tabela.Wyniki;
                 wyniki.Sort();
                 wyniki.Reverse();
