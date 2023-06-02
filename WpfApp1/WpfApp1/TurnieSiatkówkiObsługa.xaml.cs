@@ -120,7 +120,7 @@ namespace WpfApp1
                 zwycięzca.Text = noweokno.mecz.Drużyna2.ToString();
             else
             {
-                zwycięzca.Text = "Remis";
+                zwycięzca.Text = "Remis...";
             }
         }
     }

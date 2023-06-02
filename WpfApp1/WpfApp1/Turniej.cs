@@ -112,7 +112,7 @@ namespace WpfApp1
         public void GenerujRozgrywki(RejestrSędziów rejestrSędziów)
         {
             
-            ;
+            
             List<Sędzia> sędziowie = rejestrSędziów.GetListaSędziów();
             Random random = new Random();
             int losowyIndex = random.Next(sędziowie.Count);
