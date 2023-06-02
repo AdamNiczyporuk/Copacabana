@@ -116,7 +116,7 @@ namespace WpfApp1
 
             for (int i = 0; i < drużyny.Count - 1; i++)
             {
-                for (int j = 1; j < drużyny.Count; j++)
+                for (int j = i; j < drużyny.Count; j++)
                 {
                     Sędzia sędzia = sędziowie[losowyIndex];
                     mecze.Add(new Mecz(drużyny[i], drużyny[j], sędzia));
