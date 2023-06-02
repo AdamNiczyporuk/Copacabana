@@ -33,6 +33,8 @@ namespace WpfApp1
             tabelaWyników = rozgrywki.TurniejSiatkówki.tabelaWyników;
             turniej = rozgrywki.TurniejSiatkówki;
             ListaMeczy.ItemsSource = mecze;
+            ListaWyników.ItemsSource = tabelaWyników.Wyniki;
+            
             
         }
 
@@ -43,6 +45,7 @@ namespace WpfApp1
             noweOkno.ShowDialog();
             
             ListaMeczy.Items.Refresh();
+            ListaWyników.Items.Refresh();
         }
 
         private void UstawWynikMeczu(object sender, RoutedEventArgs e)
@@ -54,6 +57,7 @@ namespace WpfApp1
             DlgWynikMeczu noweokno = new DlgWynikMeczu(ListaMeczy.SelectedItem as Mecz, turniej);
             noweokno.ShowDialog();
             ListaMeczy.Items.Refresh();
+            ListaWyników.Items.Refresh();
 
         }
     }
