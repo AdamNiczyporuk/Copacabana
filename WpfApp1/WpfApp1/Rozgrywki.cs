@@ -21,6 +21,11 @@ namespace WpfApp1
             DrużynySiatkówka = new RejestrDrużyn();
             DrużynyDwaOgnie = new RejestrDrużyn();
             DrużynyPrzeciąganieLiny = new RejestrDrużyn();
+            
+        }
+        public void RozpocznijTurniejSiatkówki()
+        {
+            TurniejSiatkówki = new Turniej(DrużynySiatkówka);
         }
     }
 }

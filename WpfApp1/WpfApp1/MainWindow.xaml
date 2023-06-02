@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="350" Width="400"
+        Background="LightBlue">
     <Grid>
         <Button Width="250" Content="Zobacz Sędziów" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top"
                 Click="ZobaczSędziów"   />

@@ -13,7 +13,7 @@ namespace WpfApp1
 {
     public class Turniej
     {
-        public string Nazwa{get; private set;}
+       
         public Mecz półfinał1 { get; private set; }
         public Mecz półfinał2 { get; private set; }
         public Mecz finał { get; private set; }
@@ -24,9 +24,12 @@ namespace WpfApp1
 
         public List<Drużyna> drużyny { get; private set; }
         //Wyjebać Generuj ID z Turnieju na UML
-        public Turniej(string nazwa)
+        public TabelaWyników tabelaWyników { get; private set; }
+        public Turniej(RejestrDrużyn rejestrDrużyn)
         {
-            Nazwa = nazwa;
+            mecze = new List<Mecz>();
+            drużyny = rejestrDrużyn.GetListaDrużyn();
+            tabelaWyników = new TabelaWyników(drużyny);
         }
         public Mecz GetMecz(int id)
         {
@@ -34,16 +37,16 @@ namespace WpfApp1
 
         }
 
-        public int CzyWszytskieRozegrane()
+        public bool CzyWszytskieRozegrane()
         {
             bool czyRozegrane = mecze.All(mecz => mecz.CzyZakończony());
-            if (czyRozegrane) { return 1; }// wszytskie rozegrane
-            else { return 0; }//Nie wszytskei rozegrane 
+            if (czyRozegrane) { return true; }// wszytskie rozegrane
+            else { return false; }//Nie wszytskei rozegrane 
 
         }
         public void GenerujPółfinały()
         {
-            if (CzyWszytskieRozegrane() == 1)
+            if (CzyWszytskieRozegrane() == true)
             {
                 TabelaWyników tabela = new TabelaWyników(drużyny);
                 List<WynikDrużyny> wyniki = tabela.Wyniki;
@@ -78,7 +81,7 @@ namespace WpfApp1
         }
         public void GenerujFinały()
         {
-            if (CzyWszytskieRozegrane() == 1)
+            if (CzyWszytskieRozegrane() == true)
             {
                 TabelaWyników tabela = new TabelaWyników(drużyny);
                 List<WynikDrużyny> wyniki = tabela.Wyniki;
@@ -124,11 +127,16 @@ namespace WpfApp1
 
             }
         }
-        public void UstawWynikiMeczu(int id)
+        public void UstawWynikiMeczu(int id,int wynikDrużyny1,int wynikDrużyny2)
         {
             Mecz szukany = GetMecz(id);
-            //szukany.Wynik // nie wiem jak to settować
-    }
+            szukany.UstawWynik(wynikDrużyny1, wynikDrużyny2);
+            tabelaWyników.Aktualizuj(szukany);
+        }
+        public void DodajMecz(Mecz mecz)
+        {
+            mecze.Add(mecz);
+        }
 
 
     }

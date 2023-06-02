@@ -28,22 +28,22 @@ wyświetlanie tabeli wyników
 zapis i odczyt stanu systemu na dysk*/
     public partial class MainWindow : Window
     {
-        RejestrSędziów rejestrSędziów = new RejestrSędziów();
-        RejestrDrużyn rejestrDrużynSiatkówki = new RejestrDrużyn();
+        
+        Rozgrywki rozgrywki = new Rozgrywki();
         public MainWindow()
         {
             InitializeComponent();
             Sędzia s1 = new Sędzia("Janek", "Kowalski"), s2 = new Sędzia("Zbugniew", "chuj"), s3 = new Sędzia("pies", "siurek");
-            rejestrSędziów.DodajSędziego(s1);
-            rejestrSędziów.DodajSędziego(s2);
-            rejestrSędziów.DodajSędziego(s3);
-            rejestrDrużynSiatkówki.DodajDrużyne(new DrużynaSiatkówka("Goliaty Bez Klaty"));
-            rejestrDrużynSiatkówki.DodajDrużyne(new DrużynaSiatkówka("FC Siusiorki"));
-            rejestrDrużynSiatkówki.DodajDrużyne(new DrużynaSiatkówka("Kiełbasa PKS"));
+            rozgrywki.Sędziowie.DodajSędziego(s1);
+            rozgrywki.Sędziowie.DodajSędziego(s2);
+            rozgrywki.Sędziowie.DodajSędziego(s3);
+            rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Goliaty Bez Klaty"));
+            rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("FC Siusiorki"));
+            rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Kiełbasa PKS"));
         }
         private void ZobaczSędziów(object sender, RoutedEventArgs e)
         {
-            OknoObsługiSędziów noweOkno = new OknoObsługiSędziów(rejestrSędziów);
+            OknoObsługiSędziów noweOkno = new OknoObsługiSędziów(rozgrywki);
             noweOkno.ShowDialog();
         }
 
@@ -54,7 +54,7 @@ zapis i odczyt stanu systemu na dysk*/
 
         private void Siatkówka(object sender, RoutedEventArgs e)
         {
-            OknoObsługiDrużynSiatkówki noweOkno = new OknoObsługiDrużynSiatkówki(rejestrDrużynSiatkówki);
+            OknoObsługiDrużynSiatkówki noweOkno = new OknoObsługiDrużynSiatkówki(rozgrywki);
             noweOkno.ShowDialog();
         }
 
