@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApp1.DlgMeczSiatkówki"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Background="LightBlue"
+        Title="DlgMeczSiatkówki" Height="160" Width="470">
+    <Grid>
+        <ComboBox x:Name="drużyna2" HorizontalAlignment="Left" Margin="30,28,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="drużyna1" HorizontalAlignment="Left" Margin="180,28,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="sędziaGłówny" HorizontalAlignment="Left" Margin="30,76,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="sędziaPomocniczy1" HorizontalAlignment="Left" Margin="334,76,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="sędziaPomocniczy2" HorizontalAlignment="Left" Margin="180,76,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Dodaj Mecz" HorizontalAlignment="Left" Margin="334,28,0,0" VerticalAlignment="Top"
+                Click="DodajMecz"
+                Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="54,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="383"
+                   x:Name="message"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,7,0,0" TextWrapping="Wrap" Text="Gospodzarze:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="180,7,0,0" TextWrapping="Wrap" Text="Goście:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,54,0,0" TextWrapping="Wrap" Text="Sędzia Główny:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="180,55,0,0" TextWrapping="Wrap" Text="Sędzia Pomocniczy:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="334,55,0,0" TextWrapping="Wrap" Text="Sędzia Pomocniczy:" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

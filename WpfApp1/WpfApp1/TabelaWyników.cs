@@ -51,7 +51,7 @@ namespace WpfApp1
         {
             WynikDrużyny wynikDrużyny1 = GetWynikDrużyny(mecz.Drużyna1.Id);
             WynikDrużyny wynikDrużyny2 = GetWynikDrużyny(mecz.Drużyna2.Id);
-            switch (mecz.Wynik) 
+            switch (mecz.Rezultat) 
             {
                 case '0':
                     break;

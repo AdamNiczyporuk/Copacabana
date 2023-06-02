@@ -18,32 +18,40 @@ namespace WpfApp1
         // Wynik '1' oznacza że wygrała Drużyna1
         // Wynik '2' oznacza że wygrała Drużyna2
         // Wynik '3' remis
-        public char Wynik { get;  set; }
+        public char Rezultat { get;  set; }
         public int Id { get; private set; }
+        public string Wynik { get; private set; }
         
         public Mecz(Drużyna drużyna1, Drużyna drużyna2, Sędzia sędziaGłówny)
         {
             Drużyna1 = drużyna1;
             Drużyna2 = drużyna2;
             SędziaGłówny = sędziaGłówny;
-            Wynik = '0';
+            Rezultat = '0';
+            Wynik = "";
         }
         public bool CzyZakończony()
         {
-            return Wynik != '0';
+            return Rezultat != '0';
         }
         public void UstawWynik(int punktyDrużyny1, int punktyDrużyny2)
         {
+            Wynik = punktyDrużyny1 + " : " + punktyDrużyny2;
             if (punktyDrużyny1 > punktyDrużyny2)
             {
-                Wynik = '1';
+                Rezultat = '1';
             }
             else if (punktyDrużyny1 == punktyDrużyny2)
             {
-                Wynik = '3';
+                Rezultat = '3';
 
             }
-            else Wynik = '2';
+            else Rezultat = '2';
+        }
+        public override string ToString()
+        {
+            return $"{Drużyna1.ToString(),-15} vs {Drużyna2.ToString(),15}             Wynik: {Wynik}";
+            
         }
 
 

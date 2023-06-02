@@ -8,8 +8,14 @@
         Title="TurnieSiatkówkiObsługa" Height="450" Width="800"
         Background="LightBlue">
     <Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="42,54,400,260"
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,432,304"
                  x:Name="ListaMeczy"/>
+        <Button Content="Dodaj Spotkanie" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top"
+                Click="DodajMecz"
+                Width="150"/>
+        <Button Content="Wprowadź Wynik Meczu" HorizontalAlignment="Left" Margin="218,135,0,0" VerticalAlignment="Top"
+                Width="150"
+                Click="UstawWynikMeczu"/>
 
     </Grid>
 </Window>

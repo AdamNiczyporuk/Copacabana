@@ -24,7 +24,7 @@ namespace WpfApp1
 
         public override string ToString()
         {
-            return "Nazwa Drużyny: " + Nazwa + " Id: " + Id;
+            return Nazwa;
         }
 
     }
