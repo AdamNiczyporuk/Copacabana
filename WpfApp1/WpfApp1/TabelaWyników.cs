@@ -27,7 +27,7 @@ namespace WpfApp1
         }
         public override string ToString()
         {
-            return $"{NazwaDrużyny,-15} {Wygrane,-3} {Remisy,-3} {Porazki,-3} {Punkty,-3}";
+            return $"{NazwaDrużyny,-15} {Wygrane,-5} {Remisy,-5} {Porazki,-5} {Punkty,-5}";
         }
 
     }

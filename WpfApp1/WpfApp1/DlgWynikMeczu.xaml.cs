@@ -19,8 +19,11 @@ namespace WpfApp1
     /// </summary>
     public partial class DlgWynikMeczu : Window
     {
-        Mecz mecz;
+        public Mecz mecz;
         Turniej turniej;
+        
+        public int Wynik1;
+        public int Wynik2;
         public DlgWynikMeczu(Mecz mecz,Turniej turniej)
         {
             InitializeComponent();
@@ -37,7 +40,9 @@ namespace WpfApp1
             else if (int.TryParse(wynikGospodarzy.Text, out int wynikDrużyny1)
                 && int.TryParse(wynikGości.Text, out int wynikDrużyny2))
             {
-                turniej.UstawWynikiMeczu(mecz.Id, wynikDrużyny1, wynikDrużyny2);
+                Wynik1 = wynikDrużyny1;
+                Wynik2 = wynikDrużyny2;
+                //turniej.UstawWynikiMeczu(mecz.Id, wynikDrużyny1, wynikDrużyny2);
                 Close();
             }
             else

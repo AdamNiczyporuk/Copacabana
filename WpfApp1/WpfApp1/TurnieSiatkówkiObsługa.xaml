@@ -13,13 +13,29 @@
         <Button Content="Dodaj Spotkanie" HorizontalAlignment="Left" Margin="391,12,0,0" VerticalAlignment="Top"
                 Click="DodajMecz"
                 Width="179"/>
-        <Button Content="Wprowadź Wynik Meczu" HorizontalAlignment="Left" Margin="391,37,0,0" VerticalAlignment="Top"
+        <Button Content="Wprowadź Wynik Meczu" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top"
                 Width="179"
                 Click="UstawWynikMeczu"/>
         <ListBox x:Name="ListaWyników"
             d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,200,422,104"/>
-        <Button Content="Generuj Mecze Każdy z Każdym" HorizontalAlignment="Left" Margin="391,62,0,0" VerticalAlignment="Top" Width="179"
+        <Button Content="Generuj Mecze Każdy z Każdym" HorizontalAlignment="Left" Margin="391,42,0,0" VerticalAlignment="Top" Width="179"
                 Click="GenerujMecze"/>
+        <ListBox x:Name="ListaPółfinały"
+            d:ItemsSource="{d:SampleData ItemCount=5}" Margin="391,113,16,217"/>
+        <Button Content="Stwórz Półfinały" HorizontalAlignment="Left" Margin="585,12,0,0" VerticalAlignment="Top" Width="179"
+                Click="GenerujPółfinały"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="391,265,16,86"
+                 x:Name="finał"/>
+        <Button Content="Stwórz Finał" HorizontalAlignment="Left" Margin="585,37,0,0" VerticalAlignment="Top" Width="179"
+                Click="GenerujFinał"/>
+        <Button Content="Wprowadź Wynik Półfinału" HorizontalAlignment="Left" Margin="391,232,0,0" VerticalAlignment="Top" Width="179"
+                Click="UstawWynikPółfinału"/>
+        <Button Content="Wprowadź Wynik Finału" HorizontalAlignment="Left" Margin="588,232,0,0" VerticalAlignment="Top" Width="178"
+                Click="UstawWynikFinału"/>
+        <TextBox HorizontalAlignment="Left" Margin="502,379,0,0" TextWrapping="Wrap" Text="Zwycięzca" VerticalAlignment="Top" Width="175"
+                 TextAlignment="Center"
+                 x:Name="zwycięzca"
+                 IsReadOnly="true"/>
 
     </Grid>
 </Window>

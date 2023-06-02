@@ -72,24 +72,39 @@ namespace WpfApp1
 
 
         }
-        public void GenerujFinały()
+        public void GenerujFinały(RejestrSędziów rejestrSędziów)
         {
+            Drużyna drużyna1, drużyna2;
+            if (półfinał1.Rezultat == '1')
+            {
+                drużyna1 = półfinał1.Drużyna1;
+            }
+            else if (półfinał1.Rezultat == '2')
+            {
+                drużyna1 = półfinał1.Drużyna2;
+            }
+            else drużyna1 = półfinał1.Drużyna1;
 
-                
-                
-                int IDdrużyna1 = tabelaWyników.Wyniki [0].IdDrużyny;
-                int IDdrużyna2 = tabelaWyników.Wyniki [1].IdDrużyny;
+            if (półfinał2.Rezultat == '1')
+            {
+                drużyna2 = półfinał2.Drużyna1;
+            }
+            else if (półfinał2.Rezultat == '2')
+            {
+                drużyna2 = półfinał2.Drużyna2;
+            }
+            else drużyna2 = półfinał2.Drużyna1;
 
-                Drużyna drużyna1 = drużyny.Find(drużyna => drużyna.Id == IDdrużyna1);
-                Drużyna drużyna2 = drużyny.Find(drużyna => drużyna.Id == IDdrużyna2);
 
-                RejestrSędziów rejestsędziów = new RejestrSędziów();
-                List<Sędzia> sędziowie = rejestsędziów.GetListaSędziów();
-                Random random = new Random();
-                int losowyIndex = random.Next(sędziowie.Count);
-                Sędzia sędzia = sędziowie[losowyIndex];
 
-                finał = new Mecz(drużyna1, drużyna2, sędzia);
+
+
+            List<Sędzia> sędziowie = rejestrSędziów.GetListaSędziów();
+            Random random = new Random();
+            int losowyIndex = random.Next(sędziowie.Count);
+            Sędzia sędzia = sędziowie[losowyIndex];
+
+            finał = new Mecz(drużyna1, drużyna2, sędzia);
 
 
             
@@ -134,7 +149,10 @@ namespace WpfApp1
         {
             mecze.Add(mecz);
         }
-
+        public void UstawWynikMeczuFinałowego(Mecz mecz, int wynikDrużyny1, int wynikDrużyny2)
+        {
+            mecz.UstawWynik(wynikDrużyny1, wynikDrużyny2);
+        }
 
     }
 }

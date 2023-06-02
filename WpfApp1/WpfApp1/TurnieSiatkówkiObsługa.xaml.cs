@@ -23,6 +23,7 @@ namespace WpfApp1
         private List<Mecz> mecze;
         private TabelaWyników tabelaWyników;
         private Turniej turniej;
+        private List<Mecz> półfinały = new List<Mecz>();
         public TurnieSiatkówkiObsługa(Rozgrywki rozgrywki)
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace WpfApp1
             turniej = rozgrywki.TurniejSiatkówki;
             ListaMeczy.ItemsSource = mecze;
             ListaWyników.ItemsSource = tabelaWyników.Wyniki;
-            
+            ListaPółfinały.ItemsSource = półfinały;
             
         }
 
@@ -50,12 +51,13 @@ namespace WpfApp1
 
         private void UstawWynikMeczu(object sender, RoutedEventArgs e)
         {
-            if((ListaMeczy.SelectedItem as Mecz).CzyZakończony())
+            if(ListaMeczy.SelectedItem==null || (ListaMeczy.SelectedItem as Mecz).CzyZakończony())
             {
                 return;
             }
             DlgWynikMeczu noweokno = new DlgWynikMeczu(ListaMeczy.SelectedItem as Mecz, turniej);
             noweokno.ShowDialog();
+            turniej.UstawWynikiMeczu(noweokno.mecz.Id, noweokno.Wynik1, noweokno.Wynik2);
             ListaMeczy.Items.Refresh();
             ListaWyników.Items.Refresh();
 
@@ -66,6 +68,60 @@ namespace WpfApp1
             turniej.GenerujRozgrywki(rozgrywki.Sędziowie);
             ListaMeczy.Items.Refresh();
             ListaWyników.Items.Refresh();
+        }
+
+        private void GenerujPółfinały(object sender, RoutedEventArgs e)
+        {
+            if (turniej.CzyWszytskieRozegrane() == true)
+            {
+                turniej.GenerujPółfinały(rozgrywki.Sędziowie);
+                półfinały.Add(turniej.półfinał1);
+                półfinały.Add(turniej.półfinał2);
+                ListaPółfinały.Items.Refresh();
+            }
+        }
+
+        private void GenerujFinał(object sender, RoutedEventArgs e)
+        {
+            if(turniej.półfinał1.CzyZakończony()&& turniej.półfinał2.CzyZakończony() && turniej.półfinał1!=null)
+            {
+                turniej.GenerujFinały(rozgrywki.Sędziowie);
+                finał.Items.Add(turniej.finał);
+            }
+        }
+
+        private void UstawWynikPółfinału(object sender, RoutedEventArgs e)
+        {
+            if (ListaPółfinały.SelectedItem == null || (ListaPółfinały.SelectedItem as Mecz).CzyZakończony())
+            {
+                return;
+            }
+            DlgWynikMeczu noweokno = new DlgWynikMeczu(ListaPółfinały.SelectedItem as Mecz, turniej);
+            noweokno.ShowDialog();
+            turniej.UstawWynikMeczuFinałowego(noweokno.mecz, noweokno.Wynik1, noweokno.Wynik2);
+            ListaPółfinały.Items.Refresh();
+        }
+
+        private void UstawWynikFinału(object sender, RoutedEventArgs e)
+        {
+            if (finał.SelectedItem == null || (finał.SelectedItem as Mecz).CzyZakończony())
+            {
+                return;
+            }
+            DlgWynikMeczu noweokno = new DlgWynikMeczu(finał.SelectedItem as Mecz, turniej);
+            noweokno.ShowDialog();
+            turniej.UstawWynikMeczuFinałowego(noweokno.mecz, noweokno.Wynik1, noweokno.Wynik2);
+            finał.Items.Refresh();
+            if (noweokno.Wynik1 > noweokno.Wynik2)
+            {
+                zwycięzca.Text = noweokno.mecz.Drużyna1.ToString();
+            }
+            else if (noweokno.Wynik1 < noweokno.Wynik2)
+                zwycięzca.Text = noweokno.mecz.Drużyna2.ToString();
+            else
+            {
+                zwycięzca.Text = "Remis";
+            }
         }
     }
 }
