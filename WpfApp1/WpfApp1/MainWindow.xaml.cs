@@ -70,7 +70,7 @@ zapis i odczyt stanu systemu na dysk*/
 
         private void PrzeciaganieLiny(object sender, RoutedEventArgs e)
         {
-            OknoObsługiDrużynPrzeciąganieLiny noweOkno = new OknoObsługiDrużynPrzeciąganieLiny();
+            OknoObsługiDrużynPrzeciąganieLiny noweOkno = new OknoObsługiDrużynPrzeciąganieLiny(rozgrywki);
             noweOkno.ShowDialog();
         }
     }

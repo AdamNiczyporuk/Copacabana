@@ -19,9 +19,38 @@ namespace WpfApp1
     /// </summary>
     public partial class OknoObsługiDrużynPrzeciąganieLiny : Window
     {
-        public OknoObsługiDrużynPrzeciąganieLiny()
+        Rozgrywki rozgrywki;
+        RejestrDrużyn rejestrDrużynPrzeciąganieLiny;
+        public OknoObsługiDrużynPrzeciąganieLiny(Rozgrywki rozgrywki)
         {
             InitializeComponent();
+            this.rozgrywki = rozgrywki;
+            rejestrDrużynPrzeciąganieLiny = rozgrywki.DrużynyPrzeciąganieLiny;
+            ListaDrużyn.ItemsSource = rejestrDrużynPrzeciąganieLiny.GetListaDrużyn();
+        }
+
+        private void NowaDrużyna(object sender, RoutedEventArgs e)
+        {
+            if (nazwaZespołu.Text == "") return;
+            string nazwa = nazwaZespołu.Text;
+            DrużynaPrzeciąganieLiny nowaDrużyna = new DrużynaPrzeciąganieLiny(nazwa);
+            rejestrDrużynPrzeciąganieLiny.DodajDrużyne(nowaDrużyna);
+            ListaDrużyn.Items.Refresh();
+            nazwaZespołu.Text = "";
+        }
+
+        private void UsuńDrużyne(object sender, RoutedEventArgs e)
+        {
+            if (ListaDrużyn.SelectedItem == null) return;
+
+            DrużynaPrzeciąganieLiny usuwanaDrużyna = ListaDrużyn.SelectedItem as DrużynaPrzeciąganieLiny;
+            rejestrDrużynPrzeciąganieLiny.UsuńDrużyne(usuwanaDrużyna.Id);
+            ListaDrużyn.Items.Refresh();
+        }
+
+        private void RozpocznijTurniej(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
