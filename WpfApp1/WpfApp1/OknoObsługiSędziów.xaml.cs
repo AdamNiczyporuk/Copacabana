@@ -44,7 +44,10 @@ namespace WpfApp1
             }
             else return;
         }
-
+        private void Zamykanie(object sender, RoutedEventArgs e)
+        {
+            Close(); 
+        }
         private void DodajSędziego(object sender, RoutedEventArgs e)
         {
             if(ImieNowegoSędziego.Text!=""&& NazwiskoNowegoSędziego.Text!="")

@@ -47,7 +47,10 @@ namespace WpfApp1
             rejestrDrużynPrzeciąganieLiny.UsuńDrużyne(usuwanaDrużyna.Id);
             ListaDrużyn.Items.Refresh();
         }
-
+        private void Zamykanie(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
         private void RozpocznijTurniej(object sender, RoutedEventArgs e)
         {
             

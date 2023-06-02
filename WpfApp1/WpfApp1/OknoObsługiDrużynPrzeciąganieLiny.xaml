@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="OknoObsługiDrużynPrzeciąganieLiny" Height="250" Width="500"
         Background="LightBlue">
@@ -26,5 +27,6 @@
                  IsReadOnly="True"
                  Height="20"/>
         <TextBlock x:Name="wiadomość" HorizontalAlignment="Left" Margin="264,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="31" Width="186"/>
+        <materialDesign:PackIcon    Kind="Close" Width="24" Height="24" Foreground="Black" Margin="453,0,0,0" RenderTransformOrigin="1.25,0.252"  MouseDown="Zamykanie"/>
     </Grid>
 </Window>

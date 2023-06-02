@@ -47,7 +47,10 @@ namespace WpfApp1
             rejestrDrużynSiatkówki.UsuńDrużyne(usuwanaDrużyna.Id);
             ListaDrużyn.Items.Refresh();
         }
-
+        private void Zamykanie(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
         private void RozpocznijTurniej(object sender, RoutedEventArgs e)
         {
             if (rejestrDrużynSiatkówki.IlośćDrużyn() < 4)
@@ -60,7 +63,7 @@ namespace WpfApp1
             rozgrywki.RozpocznijTurniejSiatkówki();
             TurnieSiatkówkiObsługa noweOkno = new TurnieSiatkówkiObsługa(rozgrywki);
             noweOkno.ShowDialog();
-            
+           
         }
     }
 }
