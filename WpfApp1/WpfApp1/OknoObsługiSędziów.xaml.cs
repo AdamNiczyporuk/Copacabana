@@ -20,10 +20,13 @@ namespace WpfApp1
     
     public partial class OknoObsługiSędziów : Window
     {
+        private Rozgrywki rozgrywki;
         public RejestrSędziów rejestrSędziów;
-        public OknoObsługiSędziów(RejestrSędziów rejestrSędziów)
+        public OknoObsługiSędziów(Rozgrywki rozgrywki)
         {
             InitializeComponent();
+            this.rozgrywki = rozgrywki;
+            rejestrSędziów = rozgrywki.Sędziowie;
             this.rejestrSędziów = rejestrSędziów;
             
             ListaSędziów.ItemsSource = rejestrSędziów.GetListaSędziów();

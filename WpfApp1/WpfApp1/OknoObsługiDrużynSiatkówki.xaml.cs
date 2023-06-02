@@ -19,11 +19,13 @@ namespace WpfApp1
     /// </summary>
     public partial class OknoObsługiDrużynSiatkówki : Window
     {
+        Rozgrywki rozgrywki;
         RejestrDrużyn rejestrDrużynSiatkówki;
-        public OknoObsługiDrużynSiatkówki(RejestrDrużyn rejestr)
+        public OknoObsługiDrużynSiatkówki(Rozgrywki rozgrywki)
         {
             InitializeComponent();
-            rejestrDrużynSiatkówki = rejestr;
+            this.rozgrywki = rozgrywki;
+            rejestrDrużynSiatkówki = rozgrywki.DrużynySiatkówka;
             ListaDrużyn.ItemsSource = rejestrDrużynSiatkówki.GetListaDrużyn();
         }
 
@@ -55,6 +57,9 @@ namespace WpfApp1
             }
            
             wiadomość.Text = "";
+            rozgrywki.RozpocznijTurniejSiatkówki();
+            TurnieSiatkówkiObsługa noweOkno = new TurnieSiatkówkiObsługa(rozgrywki);
+            noweOkno.ShowDialog();
             
         }
     }
