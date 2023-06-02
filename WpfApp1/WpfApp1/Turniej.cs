@@ -44,26 +44,22 @@ namespace WpfApp1
             else { return false; }//Nie wszytskei rozegrane 
 
         }
-        public void GenerujPółfinały()
+        public void GenerujPółfinały(RejestrSędziów rejestsędziów)
         {
-            if (CzyWszytskieRozegrane() == true)
-            {
-                TabelaWyników tabela = new TabelaWyników(drużyny);
-                List<WynikDrużyny> wyniki = tabela.Wyniki;
-                wyniki.Sort();
-                wyniki.Reverse();
-                int IDdrużyna1 = wyniki[0].IdDrużyny;
-                int IDdrużyna2 = wyniki[1].IdDrużyny;
-                int IDdrużyna3 = wyniki[2].IdDrużyny;
-                int IDdrużyna4 = wyniki[3].IdDrużyny;
+            
+               
+               
+                int IDdrużyna1 =tabelaWyników.Wyniki[0].IdDrużyny;
+                int IDdrużyna2 =tabelaWyników.Wyniki[1].IdDrużyny;
+                int IDdrużyna3 =tabelaWyników.Wyniki[2].IdDrużyny;
+                int IDdrużyna4 =tabelaWyników.Wyniki[3].IdDrużyny;
                 Drużyna drużyna1 = drużyny.Find(drużyna => drużyna.Id == IDdrużyna1);
                 Drużyna drużyna2 = drużyny.Find(drużyna => drużyna.Id == IDdrużyna2);
                 Drużyna drużyna3 = drużyny.Find(drużyna => drużyna.Id == IDdrużyna3);
                 Drużyna drużyna4 = drużyny.Find(drużyna => drużyna.Id == IDdrużyna4);
-                RejestrSędziów rejestsędziów = new RejestrSędziów();
                 List<Sędzia> sędziowie = rejestsędziów.GetListaSędziów();
                 Random random = new Random();
-                int losowyIndex = random.Next(sędziowie.Count);
+                int losowyIndex = random.Next(sędziowie.Count-1);
                 Sędzia sędzia1 = sędziowie[losowyIndex];
                 Sędzia sędzia2 = sędziowie[losowyIndex];
 
@@ -72,23 +68,17 @@ namespace WpfApp1
                 półfinał2 = new Mecz(drużyna2, drużyna4, sędzia2);
 
 
-
-            }
-            else
-            { return; }// W Wpf trzeba dodac komunikat ze nie wszytskie mecze zostały rozegrane       
+  
 
 
         }
         public void GenerujFinały()
         {
-            if (CzyWszytskieRozegrane() == true)
-            {
-                TabelaWyników tabela = new TabelaWyników(drużyny);
-                List<WynikDrużyny> wyniki = tabela.Wyniki;
-                wyniki.Sort();
-                wyniki.Reverse();
-                int IDdrużyna1 = wyniki[0].IdDrużyny;
-                int IDdrużyna2 = wyniki[1].IdDrużyny;
+
+                
+                
+                int IDdrużyna1 = tabelaWyników.Wyniki [0].IdDrużyny;
+                int IDdrużyna2 = tabelaWyników.Wyniki [1].IdDrużyny;
 
                 Drużyna drużyna1 = drużyny.Find(drużyna => drużyna.Id == IDdrużyna1);
                 Drużyna drużyna2 = drużyny.Find(drużyna => drużyna.Id == IDdrużyna2);
@@ -99,17 +89,14 @@ namespace WpfApp1
                 int losowyIndex = random.Next(sędziowie.Count);
                 Sędzia sędzia = sędziowie[losowyIndex];
 
-
-
                 finał = new Mecz(drużyna1, drużyna2, sędzia);
 
 
-            }
+            
         }
         public void GenerujRozgrywki()
         {
-            RejestrDrużyn tabeladrużyn = new RejestrDrużyn();
-            List<Drużyna> drużyny = tabeladrużyn.GetListaDrużyn();
+            
             RejestrSędziów rejestsędziów = new RejestrSędziów();
             List<Sędzia> sędziowie = rejestsędziów.GetListaSędziów();
             Random random = new Random();
@@ -117,7 +104,7 @@ namespace WpfApp1
 
 
 
-            for (int i = 0; i < drużyny.Count - 1; i++)
+            for (int i = 0; i < drużyny.Count -1 ; i++)
             {
                 for (int j = i; j < drużyny.Count; j++)
                 {
