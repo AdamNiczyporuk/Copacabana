@@ -50,7 +50,7 @@ namespace WpfApp1
 
         private void UstawWynikMeczu(object sender, RoutedEventArgs e)
         {
-            if((ListaMeczy.SelectedItem as Mecz).Rezultat!='0')
+            if((ListaMeczy.SelectedItem as Mecz).CzyZakończony())
             {
                 return;
             }
@@ -59,6 +59,13 @@ namespace WpfApp1
             ListaMeczy.Items.Refresh();
             ListaWyników.Items.Refresh();
 
+        }
+
+        private void GenerujMecze(object sender, RoutedEventArgs e)
+        {
+            turniej.GenerujRozgrywki(rozgrywki.Sędziowie);
+            ListaMeczy.Items.Refresh();
+            ListaWyników.Items.Refresh();
         }
     }
 }

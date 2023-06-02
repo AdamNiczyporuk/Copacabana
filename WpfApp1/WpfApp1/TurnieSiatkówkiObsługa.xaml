@@ -10,14 +10,16 @@
     <Grid>
         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,432,304"
                  x:Name="ListaMeczy"/>
-        <Button Content="Dodaj Spotkanie" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top"
+        <Button Content="Dodaj Spotkanie" HorizontalAlignment="Left" Margin="391,12,0,0" VerticalAlignment="Top"
                 Click="DodajMecz"
-                Width="150"/>
-        <Button Content="Wprowadź Wynik Meczu" HorizontalAlignment="Left" Margin="218,135,0,0" VerticalAlignment="Top"
-                Width="150"
+                Width="179"/>
+        <Button Content="Wprowadź Wynik Meczu" HorizontalAlignment="Left" Margin="391,37,0,0" VerticalAlignment="Top"
+                Width="179"
                 Click="UstawWynikMeczu"/>
         <ListBox x:Name="ListaWyników"
-            d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,176,422,128"/>
+            d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,200,422,104"/>
+        <Button Content="Generuj Mecze Każdy z Każdym" HorizontalAlignment="Left" Margin="391,62,0,0" VerticalAlignment="Top" Width="179"
+                Click="GenerujMecze"/>
 
     </Grid>
 </Window>

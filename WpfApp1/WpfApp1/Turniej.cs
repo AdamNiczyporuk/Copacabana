@@ -59,7 +59,7 @@ namespace WpfApp1
                 Drużyna drużyna4 = drużyny.Find(drużyna => drużyna.Id == IDdrużyna4);
                 List<Sędzia> sędziowie = rejestsędziów.GetListaSędziów();
                 Random random = new Random();
-                int losowyIndex = random.Next(sędziowie.Count-1);
+                int losowyIndex = random.Next(sędziowie.Count);
                 Sędzia sędzia1 = sędziowie[losowyIndex];
                 Sędzia sędzia2 = sędziowie[losowyIndex];
 
@@ -94,11 +94,11 @@ namespace WpfApp1
 
             
         }
-        public void GenerujRozgrywki()
+        public void GenerujRozgrywki(RejestrSędziów rejestrSędziów)
         {
             
-            RejestrSędziów rejestsędziów = new RejestrSędziów();
-            List<Sędzia> sędziowie = rejestsędziów.GetListaSędziów();
+            ;
+            List<Sędzia> sędziowie = rejestrSędziów.GetListaSędziów();
             Random random = new Random();
             int losowyIndex = random.Next(sędziowie.Count);
 
@@ -106,10 +106,20 @@ namespace WpfApp1
 
             for (int i = 0; i < drużyny.Count -1 ; i++)
             {
-                for (int j = i; j < drużyny.Count; j++)
+                for (int j = i+1; j < drużyny.Count; j++)
                 {
                     Sędzia sędzia = sędziowie[losowyIndex];
-                    mecze.Add(new Mecz(drużyny[i], drużyny[j], sędzia));
+                    int kolejność = random.Next(2);
+                    switch(kolejność)
+                    {
+                        case 0:
+                            mecze.Add(new Mecz(drużyny[i], drużyny[j], sędzia));
+                            break;
+                        case 1:
+                            mecze.Add(new Mecz(drużyny[j], drużyny[i], sędzia));
+                            break;
+                    }
+                    
                 }
 
             }

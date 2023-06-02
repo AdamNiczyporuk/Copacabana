@@ -29,6 +29,7 @@ namespace WpfApp1
             SędziaGłówny = sędziaGłówny;
             Rezultat = '0';
             Wynik = "";
+            Id = generatorId++;
         }
         public bool CzyZakończony()
         {
