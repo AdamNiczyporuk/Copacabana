@@ -7,11 +7,13 @@
         mc:Ignorable="d"
         Title="TurniejSiatkówka" Height="500" Width="1000">
     <Grid>
-        <ListBox x:Name="mecze" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,32,726,335"/>
+        <ListBox x:Name="ListaMeczy" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,32,726,335"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="28,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.656,0.035"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="234,176,0,0" VerticalAlignment="Top"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="304,32,369,335"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="24,351,726,41"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="304,32,369,335"
+                 x:Name="ListaWyników"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="24,351,726,41"
+                 />
         <Button Content="Button" HorizontalAlignment="Left" Margin="131,176,0,0" VerticalAlignment="Top"/>
 
     </Grid>
