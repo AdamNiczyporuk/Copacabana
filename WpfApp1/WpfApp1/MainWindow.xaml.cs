@@ -60,7 +60,7 @@ zapis i odczyt stanu systemu na dysk*/
 
         private void DwaOgnie(object sender, RoutedEventArgs e)
         {
-            OknoObsługiDrużynDwaOgnie noweOkno = new OknoObsługiDrużynDwaOgnie();
+            OknoObsługiDrużynDwaOgnie noweOkno = new OknoObsługiDrużynDwaOgnie(rozgrywki);
             noweOkno.ShowDialog();
         }
 

@@ -19,9 +19,40 @@ namespace WpfApp1
     /// </summary>
     public partial class OknoObsługiDrużynDwaOgnie : Window
     {
-        public OknoObsługiDrużynDwaOgnie()
+
+        Rozgrywki rozgrywki;
+        RejestrDrużyn rejestrDrużynDwaOgnie;
+        public OknoObsługiDrużynDwaOgnie(Rozgrywki rozgrywki)
         {
             InitializeComponent();
+            this.rozgrywki = rozgrywki;
+            rejestrDrużynDwaOgnie = rozgrywki.DrużynyDwaOgnie;
+            ListaDrużyn.ItemsSource = rejestrDrużynDwaOgnie.GetListaDrużyn();
+        }
+
+
+        private void NowaDrużyna(object sender, RoutedEventArgs e)
+        {
+            if (nazwaZespołu.Text == "") return;
+            string nazwa = nazwaZespołu.Text;
+            DrużynaDwaOgnie nowaDrużyna = new DrużynaDwaOgnie(nazwa);
+            rejestrDrużynDwaOgnie.DodajDrużyne(nowaDrużyna);
+            ListaDrużyn.Items.Refresh();
+            nazwaZespołu.Text = "";
+        }
+
+        private void UsuńDrużyne(object sender, RoutedEventArgs e)
+        {
+            if (ListaDrużyn.SelectedItem == null) return;
+
+            DrużynaDwaOgnie usuwanaDrużyna = ListaDrużyn.SelectedItem as DrużynaDwaOgnie;
+            rejestrDrużynDwaOgnie.UsuńDrużyne(usuwanaDrużyna.Id);
+            ListaDrużyn.Items.Refresh();
+        }
+
+        private void RozpocznijTurniej(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
