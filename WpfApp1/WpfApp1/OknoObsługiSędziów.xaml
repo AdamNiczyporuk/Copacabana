@@ -5,14 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="OknoObsługiSędziów" Height="450" Width="800">
+        Title="OknoObsługiSędziów" Height="250" Width="500"
+        Background="LightBlue">
     <Grid>
-        <ListBox x:Name="ListaSędziów" Margin="43,75,357,142"/>
-        <Button Content="Usuń Sędziego" HorizontalAlignment="Left" Margin="614,75,0,0" VerticalAlignment="Top"
+        <ListBox x:Name="ListaSędziów" Margin="26,20,224,51"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="614,75,0,0" VerticalAlignment="Top"
                 Click="UsuńSędziego"/>
-        <TextBox x:Name="ImieNowegoSędziego" HorizontalAlignment="Left" Margin="83,347,0,0" TextWrapping="Wrap" Text="imie sędziego" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="NazwiskoNowegoSędziego" HorizontalAlignment="Left" Margin="280,347,0,0" TextWrapping="Wrap" Text="nazwisko sędziego" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Dodaj Sędziego" HorizontalAlignment="Left" Margin="433,345,0,0" VerticalAlignment="Top" Click="DodajSędziego"/>
+        <TextBox x:Name="ImieNowegoSędziego" HorizontalAlignment="Left" Margin="357,36,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NazwiskoNowegoSędziego" HorizontalAlignment="Left" Margin="357,67,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+
+        <Button Content="Dodaj Sędziego" HorizontalAlignment="Left" Margin="322,98,0,0" VerticalAlignment="Top" Height="19" Width="116" Click="DodajSędziego"/>
+        <Button Content="Usuń Sędziego" HorizontalAlignment="Left" Margin="322,131,0,0" VerticalAlignment="Top" Height="19" Width="116" Click="UsuńSędziego"/>
+        <TextBox HorizontalAlignment="Left" Margin="286,36,0,0" TextWrapping="Wrap" Text="Imie:" VerticalAlignment="Top" Width="71" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Margin="286,67,0,0" TextWrapping="Wrap" Text="Nazwisko:" VerticalAlignment="Top" Width="71" IsReadOnly="True"/>
+
+
 
     </Grid>
 </Window>
