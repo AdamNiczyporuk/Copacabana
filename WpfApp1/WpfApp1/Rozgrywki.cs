@@ -55,10 +55,7 @@ namespace WpfApp1
                         streamWriter.WriteLine(d);
                     }
                 }
-                else
-                {
-                    throw new NieZnalezionoPlikuException();
-                }
+                
             }
         }
         public void WczytajDrużyny(RejestrDrużyn rejestrDrużyn, string nazwaPliku)
@@ -76,7 +73,7 @@ namespace WpfApp1
                         rejestrDrużyn.DodajDrużyne(new Drużyna(streamReader.ReadLine()));
                     }
                 }
-                else throw new NieZnalezionoPlikuException();
+                
             }
         }
         public void ZapiszSędziów(string nazwaPliku)
@@ -95,7 +92,7 @@ namespace WpfApp1
 
                     }
                 }
-                else throw new NieZnalezionoPlikuException();
+                
             }
         }
         public void WczytajSędziów(string nazwaPliku)
@@ -113,7 +110,7 @@ namespace WpfApp1
                         Sędziowie.DodajSędziego(new Sędzia(streamReader.ReadLine(), streamReader.ReadLine()));
                     }
                 }
-                else throw new NieZnalezionoPlikuException();
+                
             }
         }
         public void ZapiszStan()
