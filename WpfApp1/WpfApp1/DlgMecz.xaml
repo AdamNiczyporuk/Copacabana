@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="DlgMecz" Height="450" Width="800">
+        Title="DlgMecz" Background="LightBlue"
+         Height="160" Width="470">
     <Grid>
-        
+        <ComboBox x:Name="drużyna2" HorizontalAlignment="Left" Margin="30,28,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="drużyna1" HorizontalAlignment="Left" Margin="180,28,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="sędziaGłówny" HorizontalAlignment="Left" Margin="30,76,0,0" VerticalAlignment="Top" Width="120"/>
+       
+        <Button Content="Dodaj Mecz" HorizontalAlignment="Left" Margin="334,28,0,0" VerticalAlignment="Top"
+                Click="DodajMecz"
+                Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="54,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="383"
+                   x:Name="message"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,7,0,0" TextWrapping="Wrap" Text="Gospodzarze:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="180,7,0,0" TextWrapping="Wrap" Text="Goście:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,54,0,0" TextWrapping="Wrap" Text="Sędzia Główny:" VerticalAlignment="Top"/>
+       
     </Grid>
 </Window>
