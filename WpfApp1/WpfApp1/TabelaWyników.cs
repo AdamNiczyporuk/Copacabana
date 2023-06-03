@@ -27,7 +27,16 @@ namespace WpfApp1
         }
         public override string ToString()
         {
-            return $"{NazwaDrużyny,-15} {Wygrane,-5} {Remisy,-5} {Porazki,-5} {Punkty,-5}";
+            int ilośćPotrzebnychSpacji = 25 - NazwaDrużyny.Length;
+            string l=NazwaDrużyny;
+            for(int i=0;i<ilośćPotrzebnychSpacji;i++)
+            {
+                l += " ";
+            }
+            l += Wygrane.ToString().PadLeft(5) + Remisy.ToString().PadLeft(5) + Porazki.ToString().PadLeft(5) + Punkty.ToString().PadLeft(5);
+            //return $"{NazwaDrużyny,25} {Wygrane,5} {Remisy,5} {Porazki,5} {Punkty,5}";
+           
+            return l;
         }
 
     }

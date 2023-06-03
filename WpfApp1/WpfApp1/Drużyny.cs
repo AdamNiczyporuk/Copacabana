@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    public abstract class Drużyna
+    public class Drużyna
     {
         protected static int generatorId = 0;
         public string Nazwa { get; private set; }

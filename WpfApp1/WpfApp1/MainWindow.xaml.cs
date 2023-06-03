@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WpfApp1
 {
@@ -33,15 +36,19 @@ zapis i odczyt stanu systemu na dysk*/
         public MainWindow()
         {
             InitializeComponent();
-            Sędzia s1 = new Sędzia("Janek", "Kowalski"), s2 = new Sędzia("Zbugniew", "chuj"), s3 = new Sędzia("pies", "siurek"), s4=new Sędzia("Alek","Bezszpaerk");
-            rozgrywki.Sędziowie.DodajSędziego(s1);
-            rozgrywki.Sędziowie.DodajSędziego(s2);
-            rozgrywki.Sędziowie.DodajSędziego(s3);
-            rozgrywki.Sędziowie.DodajSędziego(s4);
-            rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Goliaty Bez Klaty"));
-            rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("FC Siusiorki"));
-            rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Kiełbasa PKS"));
-            rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Marki bez Arki"));
+            //rozgrywki.WczytajStan();
+            //rozgrywki.WczytajSędziów("Sędziowie.txt");
+            //rozgrywki.WczytajDrużyne(rozgrywki.DrużynyPrzeciąganieLiny, "DrużynySiatkówki.txt");
+            //rozgrywki.WczytajDrużyne(rozgrywki.DrużynyPrzeciąganieLiny, "C:\\Users\\jakub\\Source\\Repos\\Copacabana\\WpfApp1\\WpfApp1\\StanSystemu\\DrużynySiatkówki.txt");
+            //Sędzia s1 = new Sędzia("Janek", "Kowalski"), s2 = new Sędzia("Zbugniew", "chuj"), s3 = new Sędzia("pies", "siurek"), s4=new Sędzia("Alek","Bezszpaerk");
+           // rozgrywki.Sędziowie.DodajSędziego(s1);
+            //rozgrywki.Sędziowie.DodajSędziego(s2);
+            //rozgrywki.Sędziowie.DodajSędziego(s3);
+            //rozgrywki.Sędziowie.DodajSędziego(s4);
+           // rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Goliaty Bez Klaty"));
+           // rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("FC Siusiorki"));
+           // rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Kiełbasa PKS"));
+           // rozgrywki.DrużynySiatkówka.DodajDrużyne(new DrużynaSiatkówka("Marki bez Arki"));
 
 
         }
@@ -53,7 +60,18 @@ zapis i odczyt stanu systemu na dysk*/
 
         private void Zamykanie(object sender, RoutedEventArgs e)
         {
+
+            /* string nazwaPliku = "DrużynySiatkówki.txt";
+             string sciezka = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "StanSystemu", nazwaPliku);
+             string ucietyTekst = sciezka.Substring(0, sciezka.IndexOf("\\bin\\"));
+             ucietyTekst += "\\StanSystemu\\DrużynySiatkówki.txt";*/
+
+            //rozgrywki.ZapiszDrużyny(rozgrywki.DrużynySiatkówka, "C:\\Users\\jakub\\Source\\Repos\\Copacabana\\WpfApp1\\WpfApp1\\StanSystemu\\DrużynySiatkówki.txt");
+            //rozgrywki.ZapiszDrużyny(rozgrywki.DrużynySiatkówka, "DrużynySiatkówki.txt");
+            //rozgrywki.ZapiszSędziów("Sędziowie.txt");
+            rozgrywki.ZapiszStan();
             Close();
+            
         }
 
         private void Siatkówka(object sender, RoutedEventArgs e)

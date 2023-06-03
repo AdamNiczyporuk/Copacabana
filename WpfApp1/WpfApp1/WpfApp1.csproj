@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="StanSystemu\DrużynySiatkówki.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="StanSystemu\DrużynySiatkówki.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes.Wpf" Version="1.0.1" />
   </ItemGroup>
 

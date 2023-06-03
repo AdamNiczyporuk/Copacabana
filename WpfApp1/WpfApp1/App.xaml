@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:WpfApp1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="Control">
+            <Setter Property="FontFamily" Value="Consolas" />
+        </Style>
          
     </Application.Resources>
 </Application>

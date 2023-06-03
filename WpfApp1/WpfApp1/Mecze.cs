@@ -51,7 +51,12 @@ namespace WpfApp1
         }
         public override string ToString()
         {
-            return $"{Drużyna1.ToString(),-15} vs {Drużyna2.ToString(),15}             Wynik: {Wynik}";
+
+            string drużyna1 = Drużyna1.ToString().PadLeft(20);
+            string drużyna2 = Drużyna2.ToString().PadRight(20);
+            string l = drużyna1 + " vs " + drużyna2 + " Wynik: " + Wynik;
+            // return $"{Drużyna1.ToString(),-15} vs {Drużyna2.ToString(),15}             Wynik: {Wynik}";
+            return l;
             
         }
 
