@@ -120,14 +120,14 @@ namespace WpfApp1
         {
             ZapiszDrużyny(DrużynyDwaOgnie, "DrużynyDwaOgnie.txt");
             ZapiszDrużyny(DrużynySiatkówka, "DrużynySiatkówki.txt");
-            ZapiszDrużyny(DrużynyDwaOgnie, "DrużynyPrzeciąganieLiny.txt");
+            ZapiszDrużyny(DrużynyPrzeciąganieLiny, "DrużynyPrzeciąganieLiny.txt");
             ZapiszSędziów("Sędziowie.txt");
         }
         public void WczytajStan()
         {
             WczytajDrużyny(DrużynyDwaOgnie, "DrużynyDwaOgnie.txt");
             WczytajDrużyny(DrużynySiatkówka, "DrużynySiatkówki.txt");
-            WczytajDrużyny(DrużynyDwaOgnie, "DrużynyPrzeciąganieLiny.txt");
+            WczytajDrużyny(DrużynyPrzeciąganieLiny, "DrużynyPrzeciąganieLiny.txt");
             WczytajSędziów("Sędziowie.txt");
         }
     }

@@ -36,6 +36,7 @@ zapis i odczyt stanu systemu na dysk*/
         public MainWindow()
         {
             InitializeComponent();
+            rozgrywki.WczytajStan();
             
 
 

@@ -43,7 +43,7 @@ namespace WpfApp1
         {
             if (ListaDrużyn.SelectedItem == null) return;
 
-            DrużynaSiatkówka usuwanaDrużyna = ListaDrużyn.SelectedItem as DrużynaSiatkówka;
+            Drużyna usuwanaDrużyna = ListaDrużyn.SelectedItem as Drużyna;
             rejestrDrużynSiatkówki.UsuńDrużyne(usuwanaDrużyna.Id);
             ListaDrużyn.Items.Refresh();
         }
