@@ -45,7 +45,7 @@ namespace WpfApp1
         {
             if (ListaDrużyn.SelectedItem == null) return;
 
-            DrużynaDwaOgnie usuwanaDrużyna = ListaDrużyn.SelectedItem as DrużynaDwaOgnie;
+            Drużyna usuwanaDrużyna = ListaDrużyn.SelectedItem as Drużyna;
             rejestrDrużynDwaOgnie.UsuńDrużyne(usuwanaDrużyna.Id);
             ListaDrużyn.Items.Refresh();
         }

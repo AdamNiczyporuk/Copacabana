@@ -43,7 +43,7 @@ namespace WpfApp1
         {
             if (ListaDrużyn.SelectedItem == null) return;
 
-            DrużynaPrzeciąganieLiny usuwanaDrużyna = ListaDrużyn.SelectedItem as DrużynaPrzeciąganieLiny;
+            Drużyna usuwanaDrużyna = ListaDrużyn.SelectedItem as Drużyna;
             rejestrDrużynPrzeciąganieLiny.UsuńDrużyne(usuwanaDrużyna.Id);
             ListaDrużyn.Items.Refresh();
         }
