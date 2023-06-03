@@ -53,7 +53,16 @@ namespace WpfApp1
         }
         private void RozpocznijTurniej(object sender, RoutedEventArgs e)
         {
-            
+            if (rejestrDrużynPrzeciąganieLiny.IlośćDrużyn() < 4)
+            {
+                wiadomość.Text = "Dodaj przynajmniej 4 drużyny aby przejśc do organizacji rozgrywek.";
+                return;
+            }
+
+            wiadomość.Text = "";
+            rozgrywki.RozpocznijTurniejPrzeciąganieLiny();
+            TurniejPrzeciąganieLinyObsługa noweOkno = new TurniejPrzeciąganieLinyObsługa(rozgrywki);
+            noweOkno.ShowDialog();
         }
     }
 }

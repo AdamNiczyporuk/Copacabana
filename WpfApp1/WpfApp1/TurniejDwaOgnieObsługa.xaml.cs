@@ -15,43 +15,41 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Interaction logic for TurnieSiatkówkiObsługa.xaml
+    /// Interaction logic for TurniejDwaOgnieObsługa.xaml
     /// </summary>
-    public partial class TurnieSiatkówkiObsługa : Window
+    public partial class TurniejDwaOgnieObsługa : Window
     {
+
         private Rozgrywki rozgrywki;
         private List<Mecz> mecze;
         private TabelaWyników tabelaWyników;
         private Turniej turniej;
         private List<Mecz> półfinały = new List<Mecz>();
-        public TurnieSiatkówkiObsługa(Rozgrywki rozgrywki)
+
+        public TurniejDwaOgnieObsługa(Rozgrywki rozgrywki)
         {
             InitializeComponent();
-            
-            
             this.rozgrywki = rozgrywki;
-            mecze = rozgrywki.TurniejSiatkówki.mecze;
-            tabelaWyników = rozgrywki.TurniejSiatkówki.tabelaWyników;
-            turniej = rozgrywki.TurniejSiatkówki;
+            mecze = rozgrywki.TurniejDwaOgnie.mecze;
+            tabelaWyników = rozgrywki.TurniejDwaOgnie.tabelaWyników;
+            turniej = rozgrywki.TurniejDwaOgnie;
             ListaMeczy.ItemsSource = mecze;
             ListaWyników.ItemsSource = tabelaWyników.Wyniki;
             ListaPółfinały.ItemsSource = półfinały;
-            
-        }
 
+        }
         private void DodajMecz(object sender, RoutedEventArgs e)
         {
-            DlgMeczSiatkówki noweOkno = new DlgMeczSiatkówki(rozgrywki, rozgrywki.DrużynySiatkówka);
+            DlgMecz noweOkno = new DlgMecz(rozgrywki, rozgrywki.DrużynyDwaOgnie);
 
             noweOkno.ShowDialog();
-            
+
             ListaMeczy.Items.Refresh();
             ListaWyników.Items.Refresh();
         }
-
         private void UstawWynikMeczu(object sender, RoutedEventArgs e)
         {
-            if(ListaMeczy.SelectedItem==null || (ListaMeczy.SelectedItem as Mecz).CzyZakończony())
+            if (ListaMeczy.SelectedItem == null || (ListaMeczy.SelectedItem as Mecz).CzyZakończony())
             {
                 return;
             }
@@ -62,14 +60,12 @@ namespace WpfApp1
             ListaWyników.Items.Refresh();
 
         }
-
         private void GenerujMecze(object sender, RoutedEventArgs e)
         {
             turniej.GenerujRozgrywki(rozgrywki.Sędziowie);
             ListaMeczy.Items.Refresh();
             ListaWyników.Items.Refresh();
         }
-
         private void GenerujPółfinały(object sender, RoutedEventArgs e)
         {
             if (turniej.CzyWszytskieRozegrane() == true)
@@ -83,7 +79,7 @@ namespace WpfApp1
 
         private void GenerujFinał(object sender, RoutedEventArgs e)
         {
-            if(turniej.półfinał1.CzyZakończony()&& turniej.półfinał2.CzyZakończony() && turniej.półfinał1!=null)
+            if (turniej.półfinał1.CzyZakończony() && turniej.półfinał2.CzyZakończony() && turniej.półfinał1 != null)
             {
                 turniej.GenerujFinały(rozgrywki.Sędziowie);
                 finał.Items.Add(turniej.finał);
