@@ -9,7 +9,7 @@
     <Grid >
 
         <Grid.Background>
-            <ImageBrush ImageSource="D:\NAUKA\C#\Copacabana\Plaża.jpg"/>
+            <ImageBrush ImageSource="Plaża1.jpg"/>
         </Grid.Background>
         <TextBlock HorizontalAlignment="Left" Margin="202,36,0,0" TextWrapping="Wrap" Text="Witaj Na Plaży Copacabana" VerticalAlignment="Top" FontSize="25" FontFamily="Arial Black" Foreground="Black" FontWeight="Bold" FontStyle="Italic" />
         <Button Content="Organizuj Turniej" HorizontalAlignment="Center" Margin="0,122,0,0" VerticalAlignment="Top" Width="272" Height="34" Click="OtwórzMainWindow"/>

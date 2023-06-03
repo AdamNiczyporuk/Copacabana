@@ -8,7 +8,7 @@
         Title="OpisAplikacji" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="D:\NAUKA\C#\Copacabana\Plaża.jpg"/>
+            <ImageBrush ImageSource="Plaża1.jpg"/>
         </Grid.Background>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="247" Width="422" Background="White" FontSize="13" FontFamily="Arial Black" FontWeight="Bold"><Run Text="Na Plaży w Copacabanie Toczą się rozgrywki w 3 grach zespołowych:"/><LineBreak/><Run Text="-Siatkówka Plażowa"/><LineBreak/><Run Text="-Dwa Ognie"/><LineBreak/><Run Text="-Przeciąganie Liny"/><LineBreak/><Run/><LineBreak/><Run Text="Dzięki aplikacji możesz stworzyć turniej w wybranej przez ciebie grze zespołowej. "/><LineBreak/><Run Text="F"/><Run Text="unkcjonalnoś"/><Run Language="pl-pl" Text="ć"/><Run Text=" aplikacji "/><Run Text=" pozwala na "/><Run Text=" "/><Run Text="tworzenie meczy,drużyn , generować finały i półfinały."/><LineBreak/><Run Text="Wszystkie działania można obserwować na wyświetlających się listach."/></TextBlock>
         <TextBlock HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" FontSize="24" FontFamily="Arial Black"><Run Language="pl-pl" Text="Opis Aplikcji"/></TextBlock>
