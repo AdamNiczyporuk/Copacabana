@@ -18,6 +18,7 @@
                 Click="PrzeciaganieLiny"/>
         <Button Width="250" Content="Zakończ Działanie" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top"
                 Click="Zamykanie"/>
+        <Label Content="Zarządzanie Turniejem" HorizontalAlignment="Left" Margin="82,36,0,0" VerticalAlignment="Top" Background="Transparent" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="24" IsEnabled="False" Foreground="#FF101010"/>
 
     </Grid>
 </Window>
