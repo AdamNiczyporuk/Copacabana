@@ -1,13 +1,12 @@
-﻿<Window x:Class="WpfApp1.TurnieSiatkówkiObsługa"
+﻿<Window x:Class="WpfApp1.TurniejDwaOgnieObsługa"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="TurnieSiatkówkiObsługa" Height="450" Width="800"
-        Background="LightBlue">
+        Title="TurniejDwaOgnieObsługa" Height="450" Width="800" Background="LightBlue">
     <Grid>
         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,202,432,112"
                  x:Name="ListaMeczy"/>

@@ -13,8 +13,8 @@ namespace WpfApp1
     public class Rozgrywki
     {
         public Turniej TurniejSiatkówki { get; private set; }
-       // public Turniej TurniejDwaOgnie { get; private set; }
-       // public Turniej TurniejPrzeciąganieLiny { get; private set; }
+        public Turniej TurniejDwaOgnie { get; private set; }
+       public Turniej TurniejPrzeciąganieLiny { get; private set; }
         public RejestrSędziów Sędziowie {get; private set;}
         public RejestrDrużyn DrużynySiatkówka { get; private set;}
         public RejestrDrużyn DrużynyDwaOgnie { get; private set;}
@@ -30,6 +30,14 @@ namespace WpfApp1
         public void RozpocznijTurniejSiatkówki()
         {
             TurniejSiatkówki = new Turniej(DrużynySiatkówka);
+        }
+        public void RozpocznijTurniejDwaOgnie()
+        {
+            TurniejDwaOgnie = new Turniej(DrużynyDwaOgnie);
+        }
+        public void RozpocznijTurniejPrzeciąganieLiny()
+        {
+            TurniejPrzeciąganieLiny = new Turniej(DrużynyPrzeciąganieLiny);
         }
         public void ZapiszDrużyny(RejestrDrużyn rejestrDrużyn, string nazwaPliku)
         {
