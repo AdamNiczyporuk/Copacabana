@@ -68,6 +68,7 @@ namespace WpfApp1
             turniej.GenerujRozgrywki(rozgrywki.Sędziowie);
             ListaMeczy.Items.Refresh();
             ListaWyników.Items.Refresh();
+            wynikMeczu.Visibility = Visibility.Visible;
         }
 
         private void GenerujPółfinały(object sender, RoutedEventArgs e)
@@ -78,6 +79,8 @@ namespace WpfApp1
                 półfinały.Add(turniej.półfinał1);
                 półfinały.Add(turniej.półfinał2);
                 ListaPółfinały.Items.Refresh();
+                wynikPófinału.Visibility = Visibility.Visible;
+              
             }
         }
 
@@ -87,6 +90,7 @@ namespace WpfApp1
             {
                 turniej.GenerujFinały(rozgrywki.Sędziowie);
                 finał.Items.Add(turniej.finał);
+                wynikFinału.Visibility = Visibility.Visible;
             }
         }
 

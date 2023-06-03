@@ -14,7 +14,7 @@
         <Button Content="Dodaj Spotkanie" HorizontalAlignment="Left" Margin="205,333,0,0" VerticalAlignment="Top"
                 Click="DodajMecz"
                 Width="163"/>
-        <Button Content="Wprowadź Wynik Meczu" HorizontalAlignment="Left" Margin="99,364,0,0" VerticalAlignment="Top"
+        <Button Content="Wprowadź Wynik Meczu" HorizontalAlignment="Left" Margin="99,364,0,0" VerticalAlignment="Top" Visibility="Collapsed" x:Name="wynikMeczu"
                 Width="180"
                 Click="UstawWynikMeczu"/>
         <ListBox x:Name="ListaWyników"
@@ -23,15 +23,15 @@
                 Click="GenerujMecze"/>
         <ListBox x:Name="ListaPółfinały"
             d:ItemsSource="{d:SampleData ItemCount=5}" Margin="383,35,24,294"/>
-        <Button Content="Stwórz Półfinały" HorizontalAlignment="Left" Margin="391,148,0,0" VerticalAlignment="Top" Width="152"
+        <Button Content="Stwórz Półfinały" HorizontalAlignment="Left" Margin="391,148,0,0" VerticalAlignment="Top" Width="152" 
                 Click="GenerujPółfinały"/>
         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="383,202,24,112"
                  x:Name="finał"/>
         <Button Content="Stwórz Finał" HorizontalAlignment="Left" Margin="391,333,0,0" VerticalAlignment="Top" Width="152"
                 Click="GenerujFinał"/>
-        <Button Content="Wprowadź Wynik Półfinału" HorizontalAlignment="Left" Margin="580,148,0,0" VerticalAlignment="Top" Width="178"
+        <Button Content="Wprowadź Wynik Półfinału" HorizontalAlignment="Left" Margin="580,148,0,0" VerticalAlignment="Top" Width="178" x:Name="wynikPófinału" Visibility="Collapsed"
                 Click="UstawWynikPółfinału"/>
-        <Button Content="Wprowadź Wynik Finału" HorizontalAlignment="Left" Margin="580,333,0,0" VerticalAlignment="Top" Width="178"
+        <Button Content="Wprowadź Wynik Finału" HorizontalAlignment="Left" Margin="580,333,0,0" VerticalAlignment="Top" Width="178" x:Name="wynikFinału" Visibility="Collapsed"
                 Click="UstawWynikFinału"/>
         <TextBox HorizontalAlignment="Left" Margin="492,366,0,0" TextWrapping="Wrap" Text="Zwycięzca" VerticalAlignment="Top" Width="175"
                  TextAlignment="Center"
