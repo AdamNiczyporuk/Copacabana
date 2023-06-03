@@ -20,19 +20,21 @@ namespace WpfApp1
     public partial class DlgMecz : Window
     {
         Rozgrywki rozgrywki;
-        public DlgMecz(Rozgrywki rozgrywki, RejestrDrużyn drużyny)
+        Turniej turniej;
+        public DlgMecz(Rozgrywki rozgrywki, RejestrDrużyn drużyny,Turniej turniej)
         {
             InitializeComponent();
             this.rozgrywki = rozgrywki;
             drużyna2.ItemsSource = drużyny.GetListaDrużyn();
             drużyna1.ItemsSource = drużyny.GetListaDrużyn();
             sędziaGłówny.ItemsSource = rozgrywki.Sędziowie.GetListaSędziów();
+            this.turniej = turniej;
         }
         private void DodajMecz(object sender, RoutedEventArgs e)
         {
             if (drużyna1.SelectedItem != null && drużyna2.SelectedItem != null && drużyna1.SelectedItem != drużyna2.SelectedItem)
             {
-                if (sędziaGłówny.SelectedItem != null )
+                if (sędziaGłówny.SelectedItem == null )
                 {
 
                     message.Text = "Nie wybrano sędziego...";
@@ -46,7 +48,7 @@ namespace WpfApp1
                         Drużyna druzyna1 = drużyna1.SelectedItem as Drużyna;
                         Drużyna druzyna2 = drużyna2.SelectedItem as Drużyna;
                         Mecz nowyMecz = new Mecz( druzyna1, druzyna2, główny);
-                        rozgrywki.TurniejSiatkówki.DodajMecz(nowyMecz);
+                        turniej.DodajMecz(nowyMecz);
 
                         Close();
                 }

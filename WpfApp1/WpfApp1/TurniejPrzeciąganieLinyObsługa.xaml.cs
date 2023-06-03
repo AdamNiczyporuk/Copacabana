@@ -40,7 +40,7 @@ namespace WpfApp1
         }
         private void DodajMecz(object sender, RoutedEventArgs e)
         {
-            DlgMecz noweOkno = new DlgMecz(rozgrywki, rozgrywki.DrużynyPrzeciąganieLiny);
+            DlgMecz noweOkno = new DlgMecz(rozgrywki, rozgrywki.DrużynyPrzeciąganieLiny,turniej);
 
             noweOkno.ShowDialog();
 

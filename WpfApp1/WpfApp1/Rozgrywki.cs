@@ -9,12 +9,12 @@ using System.Windows;
 
 namespace WpfApp1
 {
-    public class NieZnalezionoPlikuException : Exception { }
+    
     public class Rozgrywki
     {
         public Turniej TurniejSiatkówki { get; private set; }
         public Turniej TurniejDwaOgnie { get; private set; }
-       public Turniej TurniejPrzeciąganieLiny { get; private set; }
+        public Turniej TurniejPrzeciąganieLiny { get; private set; }
         public RejestrSędziów Sędziowie {get; private set;}
         public RejestrDrużyn DrużynySiatkówka { get; private set;}
         public RejestrDrużyn DrużynyDwaOgnie { get; private set;}
@@ -39,7 +39,7 @@ namespace WpfApp1
         {
             TurniejPrzeciąganieLiny = new Turniej(DrużynyPrzeciąganieLiny);
         }
-        public void ZapiszDrużyny(RejestrDrużyn rejestrDrużyn, string nazwaPliku)
+        private void ZapiszDrużyny(RejestrDrużyn rejestrDrużyn, string nazwaPliku)
         {
             
             string sciezka = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "StanSystemu", nazwaPliku);
@@ -58,7 +58,7 @@ namespace WpfApp1
                 
             }
         }
-        public void WczytajDrużyny(RejestrDrużyn rejestrDrużyn, string nazwaPliku)
+        private void WczytajDrużyny(RejestrDrużyn rejestrDrużyn, string nazwaPliku)
         {
             string sciezka = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "StanSystemu", nazwaPliku);
             string ucietyTekst = sciezka.Substring(0, sciezka.IndexOf("\\bin\\"));
@@ -76,7 +76,7 @@ namespace WpfApp1
                 
             }
         }
-        public void ZapiszSędziów(string nazwaPliku)
+        private void ZapiszSędziów(string nazwaPliku)
         {
             string sciezka = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "StanSystemu", nazwaPliku);
             string ucietyTekst = sciezka.Substring(0, sciezka.IndexOf("\\bin\\"));
@@ -95,7 +95,7 @@ namespace WpfApp1
                 
             }
         }
-        public void WczytajSędziów(string nazwaPliku)
+        private void WczytajSędziów(string nazwaPliku)
         {
             string sciezka = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "StanSystemu", nazwaPliku);
             string ucietyTekst = sciezka.Substring(0, sciezka.IndexOf("\\bin\\"));

@@ -18,12 +18,11 @@ namespace WpfApp1
         public Mecz półfinał2 { get; private set; }
         public Mecz finał { get; private set; }
         public List<Mecz> mecze { get; private set; }
-        // Nie potrzebne
-        //protected static int Id = 0;
+        
 
 
         public List<Drużyna> drużyny { get; private set; }
-        //Wyjebać Generuj ID z Turnieju na UML
+        
         public TabelaWyników tabelaWyników { get; private set; }
         public Turniej(RejestrDrużyn rejestrDrużyn)
         {
