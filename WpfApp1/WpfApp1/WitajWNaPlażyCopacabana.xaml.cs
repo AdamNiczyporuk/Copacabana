@@ -23,5 +23,21 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void OtwórzMainWindow(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();   
+            mainWindow.Show();
+            Close();  
+        }
+        private void Zamykanie(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        private void Opis(object sender, RoutedEventArgs e)
+        {
+            OpisAplikacji opisAplikacji = new OpisAplikacji();  
+            opisAplikacji.Show(); 
+        }
     }
 }

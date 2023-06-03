@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-adam
 penis
 marek
 cipa
 orangutan
 Bobek
 kondrad 
-elo
-=======
 Jan
 Brzechwa
 Ignacy
@@ -16,4 +12,5 @@ Adolf
 Bierny
 ewwe
 dasddf
->>>>>>> a01b6ca2ae8e64806b91dadcf9d68858eee06e58
+OLAF
+KORNISZON
