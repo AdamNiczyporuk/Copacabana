@@ -60,6 +60,7 @@ namespace WpfApp1
             turniej.UstawWynikiMeczu(noweokno.mecz.Id, noweokno.Wynik1, noweokno.Wynik2);
             ListaMeczy.Items.Refresh();
             ListaWyników.Items.Refresh();
+            wynikMeczu.Visibility = Visibility.Visible;
 
         }
 

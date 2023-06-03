@@ -46,6 +46,8 @@ namespace WpfApp1
 
             ListaMeczy.Items.Refresh();
             ListaWyników.Items.Refresh();
+            wynikMeczu.Visibility = Visibility.Visible;
+
         }
         private void UstawWynikMeczu(object sender, RoutedEventArgs e)
         {
