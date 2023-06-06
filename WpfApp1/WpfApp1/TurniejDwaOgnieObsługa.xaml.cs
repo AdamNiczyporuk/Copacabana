@@ -71,7 +71,7 @@ namespace WpfApp1
         }
         private void GenerujPółfinały(object sender, RoutedEventArgs e)
         {
-            if (turniej.CzyWszytskieRozegrane() == true)
+            if (turniej.CzyWszytskieRozegrane() && półfinały.Count < 2)
             {
                 turniej.GenerujPółfinały(rozgrywki.Sędziowie);
                 półfinały.Add(turniej.półfinał1);
@@ -83,7 +83,7 @@ namespace WpfApp1
 
         private void GenerujFinał(object sender, RoutedEventArgs e)
         {
-            if (turniej.półfinał1.CzyZakończony() && turniej.półfinał2.CzyZakończony() && turniej.półfinał1 != null)
+            if (turniej.półfinał1 != null && turniej.półfinał1.CzyZakończony() && turniej.półfinał2.CzyZakończony())
             {
                 turniej.GenerujFinały(rozgrywki.Sędziowie);
                 finał.Items.Add(turniej.finał);

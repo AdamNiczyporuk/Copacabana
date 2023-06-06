@@ -66,7 +66,7 @@ namespace WpfApp1
             rozgrywki.RozpocznijTurniejDwaOgnie();
             TurniejDwaOgnieObsługa noweOkno = new TurniejDwaOgnieObsługa(rozgrywki);
             noweOkno.ShowDialog();
-
+            Close();
         }
     }
 }

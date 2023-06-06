@@ -63,7 +63,8 @@ namespace WpfApp1
             rozgrywki.RozpocznijTurniejSiatkówki();
             TurnieSiatkówkiObsługa noweOkno = new TurnieSiatkówkiObsługa(rozgrywki);
             noweOkno.ShowDialog();
-           
+            Close();
+
         }
     }
 }

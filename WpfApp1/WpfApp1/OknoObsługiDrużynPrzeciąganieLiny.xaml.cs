@@ -63,6 +63,7 @@ namespace WpfApp1
             rozgrywki.RozpocznijTurniejPrzeciąganieLiny();
             TurniejPrzeciąganieLinyObsługa noweOkno = new TurniejPrzeciąganieLinyObsługa(rozgrywki);
             noweOkno.ShowDialog();
+            Close();
         }
     }
 }
