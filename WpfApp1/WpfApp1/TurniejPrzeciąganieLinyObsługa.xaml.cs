@@ -40,6 +40,7 @@ namespace WpfApp1
         }
         private void DodajMecz(object sender, RoutedEventArgs e)
         {
+            if (półfinały.Count > 0) { return; }
             DlgMecz noweOkno = new DlgMecz(rozgrywki, rozgrywki.DrużynyPrzeciąganieLiny,turniej);
 
             noweOkno.ShowDialog();
@@ -63,6 +64,7 @@ namespace WpfApp1
         }
         private void GenerujMecze(object sender, RoutedEventArgs e)
         {
+            if (półfinały.Count > 0) { return; }
             turniej.GenerujRozgrywki(rozgrywki.Sędziowie);
             ListaMeczy.Items.Refresh();
             ListaWyników.Items.Refresh();

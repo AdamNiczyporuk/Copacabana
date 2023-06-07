@@ -28,18 +28,7 @@ namespace WpfApp1
         }
 
     }
-    public class DrużynaSiatkówka : Drużyna
-    {
-        public DrużynaSiatkówka(string nazwa) : base(nazwa) { }
-    }
-    public class DrużynaPrzeciąganieLiny : Drużyna
-    {
-        public DrużynaPrzeciąganieLiny(string nazwa) : base(nazwa) { }
-    }
-    public class DrużynaDwaOgnie : Drużyna
-    {
-        public DrużynaDwaOgnie(string nazwa) : base(nazwa) { }
-    }
+
     public class RejestrDrużyn
     {
         private List<Drużyna> drużyny;

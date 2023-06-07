@@ -33,7 +33,7 @@ namespace WpfApp1
         {
             if (nazwaZespołu.Text == "") return;
             string nazwa = nazwaZespołu.Text;
-            DrużynaPrzeciąganieLiny nowaDrużyna = new DrużynaPrzeciąganieLiny(nazwa);
+            Drużyna nowaDrużyna = new Drużyna(nazwa);
             rejestrDrużynPrzeciąganieLiny.DodajDrużyne(nowaDrużyna);
             ListaDrużyn.Items.Refresh();
             nazwaZespołu.Text = "";

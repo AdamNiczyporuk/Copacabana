@@ -35,7 +35,7 @@ namespace WpfApp1
         {
             if (nazwaZespołu.Text == "") return;
             string nazwa = nazwaZespołu.Text;
-            DrużynaDwaOgnie nowaDrużyna = new DrużynaDwaOgnie(nazwa);
+            Drużyna nowaDrużyna = new Drużyna(nazwa);
             rejestrDrużynDwaOgnie.DodajDrużyne(nowaDrużyna);
             ListaDrużyn.Items.Refresh();
             nazwaZespołu.Text = "";
