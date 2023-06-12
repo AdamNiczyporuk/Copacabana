@@ -1,4 +1,5 @@
-kalafiory
-dreamteam
-buciroe
-dasd
+Red
+Green
+Blue
+Yellow
+Purple
